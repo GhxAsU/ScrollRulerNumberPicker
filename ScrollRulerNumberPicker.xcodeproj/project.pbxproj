@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74AAA02B1DD1981E00372196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA02A1DD1981E00372196 /* AppDelegate.swift */; };
+		74AAA02D1DD1981E00372196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA02C1DD1981E00372196 /* ViewController.swift */; };
+		74AAA0301DD1981E00372196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA02E1DD1981E00372196 /* Main.storyboard */; };
+		74AAA0321DD1981E00372196 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA0311DD1981E00372196 /* Assets.xcassets */; };
+		74AAA0351DD1981E00372196 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA0331DD1981E00372196 /* LaunchScreen.storyboard */; };
+		74AAA0401DD1981E00372196 /* ScrollRulerNumberPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA03F1DD1981E00372196 /* ScrollRulerNumberPickerTests.swift */; };
+		74AAA04B1DD1981E00372196 /* ScrollRulerNumberPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA04A1DD1981E00372196 /* ScrollRulerNumberPickerUITests.swift */; };
+		74AAA05A1DD1985B00372196 /* ScrollRulerNumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA0591DD1985B00372196 /* ScrollRulerNumberPicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74AAA03C1DD1981E00372196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74AAA01F1DD1981E00372196 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74AAA0261DD1981E00372196;
+			remoteInfo = ScrollRulerNumberPicker;
+		};
+		74AAA0471DD1981E00372196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74AAA01F1DD1981E00372196 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74AAA0261DD1981E00372196;
+			remoteInfo = ScrollRulerNumberPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		74AAA0271DD1981E00372196 /* ScrollRulerNumberPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollRulerNumberPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74AAA02A1DD1981E00372196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74AAA02C1DD1981E00372196 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74AAA02F1DD1981E00372196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74AAA0311DD1981E00372196 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74AAA0341DD1981E00372196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74AAA0361DD1981E00372196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74AAA03B1DD1981E00372196 /* ScrollRulerNumberPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollRulerNumberPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74AAA03F1DD1981E00372196 /* ScrollRulerNumberPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRulerNumberPickerTests.swift; sourceTree = "<group>"; };
+		74AAA0411DD1981E00372196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74AAA0461DD1981E00372196 /* ScrollRulerNumberPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollRulerNumberPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74AAA04A1DD1981E00372196 /* ScrollRulerNumberPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRulerNumberPickerUITests.swift; sourceTree = "<group>"; };
+		74AAA04C1DD1981E00372196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74AAA0591DD1985B00372196 /* ScrollRulerNumberPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollRulerNumberPicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74AAA0241DD1981E00372196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0381DD1981E00372196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0431DD1981E00372196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74AAA01E1DD1981E00372196 = {
+			isa = PBXGroup;
+			children = (
+				74AAA0291DD1981E00372196 /* ScrollRulerNumberPicker */,
+				74AAA03E1DD1981E00372196 /* ScrollRulerNumberPickerTests */,
+				74AAA0491DD1981E00372196 /* ScrollRulerNumberPickerUITests */,
+				74AAA0281DD1981E00372196 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74AAA0281DD1981E00372196 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA0271DD1981E00372196 /* ScrollRulerNumberPicker.app */,
+				74AAA03B1DD1981E00372196 /* ScrollRulerNumberPickerTests.xctest */,
+				74AAA0461DD1981E00372196 /* ScrollRulerNumberPickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74AAA0291DD1981E00372196 /* ScrollRulerNumberPicker */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA0581DD1984200372196 /* source */,
+				74AAA02A1DD1981E00372196 /* AppDelegate.swift */,
+				74AAA02C1DD1981E00372196 /* ViewController.swift */,
+				74AAA02E1DD1981E00372196 /* Main.storyboard */,
+				74AAA0311DD1981E00372196 /* Assets.xcassets */,
+				74AAA0331DD1981E00372196 /* LaunchScreen.storyboard */,
+				74AAA0361DD1981E00372196 /* Info.plist */,
+			);
+			path = ScrollRulerNumberPicker;
+			sourceTree = "<group>";
+		};
+		74AAA03E1DD1981E00372196 /* ScrollRulerNumberPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA03F1DD1981E00372196 /* ScrollRulerNumberPickerTests.swift */,
+				74AAA0411DD1981E00372196 /* Info.plist */,
+			);
+			path = ScrollRulerNumberPickerTests;
+			sourceTree = "<group>";
+		};
+		74AAA0491DD1981E00372196 /* ScrollRulerNumberPickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA04A1DD1981E00372196 /* ScrollRulerNumberPickerUITests.swift */,
+				74AAA04C1DD1981E00372196 /* Info.plist */,
+			);
+			path = ScrollRulerNumberPickerUITests;
+			sourceTree = "<group>";
+		};
+		74AAA0581DD1984200372196 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA0591DD1985B00372196 /* ScrollRulerNumberPicker.swift */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74AAA0261DD1981E00372196 /* ScrollRulerNumberPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74AAA04F1DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPicker" */;
+			buildPhases = (
+				74AAA0231DD1981E00372196 /* Sources */,
+				74AAA0241DD1981E00372196 /* Frameworks */,
+				74AAA0251DD1981E00372196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollRulerNumberPicker;
+			productName = ScrollRulerNumberPicker;
+			productReference = 74AAA0271DD1981E00372196 /* ScrollRulerNumberPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74AAA03A1DD1981E00372196 /* ScrollRulerNumberPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74AAA0521DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPickerTests" */;
+			buildPhases = (
+				74AAA0371DD1981E00372196 /* Sources */,
+				74AAA0381DD1981E00372196 /* Frameworks */,
+				74AAA0391DD1981E00372196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74AAA03D1DD1981E00372196 /* PBXTargetDependency */,
+			);
+			name = ScrollRulerNumberPickerTests;
+			productName = ScrollRulerNumberPickerTests;
+			productReference = 74AAA03B1DD1981E00372196 /* ScrollRulerNumberPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		74AAA0451DD1981E00372196 /* ScrollRulerNumberPickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74AAA0551DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPickerUITests" */;
+			buildPhases = (
+				74AAA0421DD1981E00372196 /* Sources */,
+				74AAA0431DD1981E00372196 /* Frameworks */,
+				74AAA0441DD1981E00372196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74AAA0481DD1981E00372196 /* PBXTargetDependency */,
+			);
+			name = ScrollRulerNumberPickerUITests;
+			productName = ScrollRulerNumberPickerUITests;
+			productReference = 74AAA0461DD1981E00372196 /* ScrollRulerNumberPickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74AAA01F1DD1981E00372196 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Chen;
+				TargetAttributes = {
+					74AAA0261DD1981E00372196 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = ZY973ZWZ2U;
+						ProvisioningStyle = Automatic;
+					};
+					74AAA03A1DD1981E00372196 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = ZY973ZWZ2U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 74AAA0261DD1981E00372196;
+					};
+					74AAA0451DD1981E00372196 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = ZY973ZWZ2U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 74AAA0261DD1981E00372196;
+					};
+				};
+			};
+			buildConfigurationList = 74AAA0221DD1981E00372196 /* Build configuration list for PBXProject "ScrollRulerNumberPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74AAA01E1DD1981E00372196;
+			productRefGroup = 74AAA0281DD1981E00372196 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74AAA0261DD1981E00372196 /* ScrollRulerNumberPicker */,
+				74AAA03A1DD1981E00372196 /* ScrollRulerNumberPickerTests */,
+				74AAA0451DD1981E00372196 /* ScrollRulerNumberPickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74AAA0251DD1981E00372196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74AAA0351DD1981E00372196 /* LaunchScreen.storyboard in Resources */,
+				74AAA0321DD1981E00372196 /* Assets.xcassets in Resources */,
+				74AAA0301DD1981E00372196 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0391DD1981E00372196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0441DD1981E00372196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74AAA0231DD1981E00372196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74AAA02D1DD1981E00372196 /* ViewController.swift in Sources */,
+				74AAA05A1DD1985B00372196 /* ScrollRulerNumberPicker.swift in Sources */,
+				74AAA02B1DD1981E00372196 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0371DD1981E00372196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74AAA0401DD1981E00372196 /* ScrollRulerNumberPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AAA0421DD1981E00372196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74AAA04B1DD1981E00372196 /* ScrollRulerNumberPickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74AAA03D1DD1981E00372196 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74AAA0261DD1981E00372196 /* ScrollRulerNumberPicker */;
+			targetProxy = 74AAA03C1DD1981E00372196 /* PBXContainerItemProxy */;
+		};
+		74AAA0481DD1981E00372196 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74AAA0261DD1981E00372196 /* ScrollRulerNumberPicker */;
+			targetProxy = 74AAA0471DD1981E00372196 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74AAA02E1DD1981E00372196 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74AAA02F1DD1981E00372196 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74AAA0331DD1981E00372196 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74AAA0341DD1981E00372196 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74AAA04D1DD1981E00372196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74AAA04E1DD1981E00372196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74AAA0501DD1981E00372196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		74AAA0511DD1981E00372196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		74AAA0531DD1981E00372196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollRulerNumberPicker.app/ScrollRulerNumberPicker";
+			};
+			name = Debug;
+		};
+		74AAA0541DD1981E00372196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollRulerNumberPicker.app/ScrollRulerNumberPicker";
+			};
+			name = Release;
+		};
+		74AAA0561DD1981E00372196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ScrollRulerNumberPicker;
+			};
+			name = Debug;
+		};
+		74AAA0571DD1981E00372196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ZY973ZWZ2U;
+				INFOPLIST_FILE = ScrollRulerNumberPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.slicenote.ScrollRulerNumberPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ScrollRulerNumberPicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74AAA0221DD1981E00372196 /* Build configuration list for PBXProject "ScrollRulerNumberPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74AAA04D1DD1981E00372196 /* Debug */,
+				74AAA04E1DD1981E00372196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74AAA04F1DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74AAA0501DD1981E00372196 /* Debug */,
+				74AAA0511DD1981E00372196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74AAA0521DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74AAA0531DD1981E00372196 /* Debug */,
+				74AAA0541DD1981E00372196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74AAA0551DD1981E00372196 /* Build configuration list for PBXNativeTarget "ScrollRulerNumberPickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74AAA0561DD1981E00372196 /* Debug */,
+				74AAA0571DD1981E00372196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74AAA01F1DD1981E00372196 /* Project object */;
+}
