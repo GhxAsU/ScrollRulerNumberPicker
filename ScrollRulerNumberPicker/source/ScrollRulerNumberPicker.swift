@@ -9,7 +9,7 @@
 import UIKit
 
 extension String {
-    func cy_width(font: UIFont, height: CGFloat) -> CGFloat {
+    fileprivate func cy_width(font: UIFont, height: CGFloat) -> CGFloat {
         let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: height))
         label.numberOfLines = 1
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -21,13 +21,12 @@ extension String {
 }
 
 protocol ScrollRulerNumberPickerDelegate: class {
-    func numberPicker(numberPicker: ScrollRulerNumberPicker, updateValue value: CGFloat)
-
-    func numberPicker(numberPicker: ScrollRulerNumberPicker, textForValue value: CGFloat) -> String
+    func numberPickerDidUpdateValue(picker: ScrollRulerNumberPicker, newValue: CGFloat)
+    func numberPickerLabelTextForValue(picker: ScrollRulerNumberPicker, value: CGFloat) -> String
 }
 
-enum MinorTicksPerMajorTick: Int {
-    case zero = 1
+public enum MinorTicksPerMajorTick: Int {
+    case one = 1
     case two = 2
     case five = 5
 }
@@ -133,13 +132,13 @@ class ScrollRulerNumberPicker: UIView {
             self.setNeedsLayout()
         }
     }
- 
+
     public var minorTicksPerMajorTick: MinorTicksPerMajorTick = .five {
         didSet {
             self.setNeedsLayout()
         }
     }
- 
+
     public var minorTickDistance: CGFloat = 15.0 {
         didSet {
             self.setNeedsLayout()
@@ -241,7 +240,7 @@ class ScrollRulerNumberPicker: UIView {
         //clean path
         self.majorLinePath.removeAllPoints()
         self.minorLinePath.removeAllPoints()
-        
+
         //clean text layers
         if let sublayers = self.majorLineLayer.sublayers {
             for layer in sublayers where layer is CATextLayer {
@@ -286,7 +285,7 @@ class ScrollRulerNumberPicker: UIView {
             majorLinePath.move(to: CGPoint(x: x, y: topStraightLineWidth / 2.0))
             majorLinePath.addLine(to: CGPoint(x: x, y: topStraightLineWidth / 2.0 + majorTickLength))
 
-            if let text = self.delegate?.numberPicker(numberPicker: self, textForValue: start) {
+            if let text = self.delegate?.numberPickerLabelTextForValue(picker: self, value: start) {
                 let textLayer = CATextLayer()
                 textLayer.contentsScale = UIScreen.main.scale
                 textLayer.font = textFont
@@ -302,7 +301,7 @@ class ScrollRulerNumberPicker: UIView {
             }
 
             //draw minor ticks
-            for i in 0 ..< self.minorTicksPerMajorTick.rawValue {
+            for i in 0..<self.minorTicksPerMajorTick.rawValue {
                 if i != 0 {
                     let minorValue = start + CGFloat(i) * majorValueStep / CGFloat(self.minorTicksPerMajorTick.rawValue)
                     if minorValue <= self.maxValue {
@@ -329,13 +328,13 @@ class ScrollRulerNumberPicker: UIView {
         if offsetX < 0 {
             if self.value != self.minValue {
                 self.value = self.minValue
-                self.delegate?.numberPicker(numberPicker: self, updateValue: self.minValue)
+                self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.minValue)
             }
             return
         } else if offsetX > range {
             if self.value != self.maxValue {
                 self.value = self.maxValue
-                self.delegate?.numberPicker(numberPicker: self, updateValue: self.maxValue)
+                self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.maxValue)
             }
             return
         }
@@ -351,7 +350,7 @@ class ScrollRulerNumberPicker: UIView {
         }
 
         self.value = sourceValue
-        self.delegate?.numberPicker(numberPicker: self, updateValue: self.value)
+        self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.value)
     }
 
     required init?(coder aDecoder: NSCoder) {

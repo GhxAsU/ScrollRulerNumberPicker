@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         self.label.frame = CGRect(x: 20, y: 60, width: UIScreen.main.bounds.size.width - 40, height: 20)
         self.view.addSubview(self.label)
 
-        let picker = ScrollRulerNumberPicker(frame: CGRect(x: 20, y: 100, width: 280, height: 80))
+        let picker = ScrollRulerNumberPicker(frame: CGRect(x: 20, y: 100, width: UIScreen.main.bounds.size.width - 40, height: 80))
         picker.delegate = self
         self.view.addSubview(picker)
 
@@ -50,11 +50,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ScrollRulerNumberPickerDelegate {
-    func numberPicker(numberPicker: ScrollRulerNumberPicker, updateValue value: CGFloat) {
-        self.label.text = "\(value)"
+    func numberPickerDidUpdateValue(picker: ScrollRulerNumberPicker, newValue: CGFloat) {
+        self.label.text = "\(newValue)"
     }
-    
-    func numberPicker(numberPicker: ScrollRulerNumberPicker, textForValue value: CGFloat) -> String {
+
+    func numberPickerLabelTextForValue(picker: ScrollRulerNumberPicker, value: CGFloat) -> String {
         return String(format: "%.0f", value)
     }
 }
