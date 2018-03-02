@@ -23,11 +23,12 @@ class ViewController: UIViewController {
         picker.delegate = self
         self.view.addSubview(picker)
 
-        self.label.text = "\(picker.pickerValue)"
+        self.label.text = "\(picker.value)"
 
-        /*DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4.0, execute: {
-            x.setPickerValue(value: 100, animated: true)
-        })*/
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4.0, execute: {
+            //picker.setPickerValue(value: 100, animated: true)
+            picker.value = 100
+        })
 
         /*DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
             picker.redLineColor = UIColor.purple

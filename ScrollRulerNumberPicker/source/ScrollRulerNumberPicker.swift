@@ -8,18 +8,6 @@
 
 import UIKit
 
-extension String {
-    fileprivate func cy_width(font: UIFont, height: CGFloat) -> CGFloat {
-        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: height))
-        label.numberOfLines = 1
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = font
-        label.text = self
-        label.sizeToFit()
-        return label.frame.width
-    }
-}
-
 protocol ScrollRulerNumberPickerDelegate: class {
     func numberPickerDidUpdateValue(picker: ScrollRulerNumberPicker, newValue: CGFloat)
     func numberPickerLabelTextForValue(picker: ScrollRulerNumberPicker, value: CGFloat) -> String
@@ -31,53 +19,54 @@ public enum MinorTicksPerMajorTick: Int {
     case five = 5
 }
 
-class ScrollRulerNumberPicker: UIView {
+public class ScrollRulerNumberPicker: UIView {
 
-    //private current value
-    fileprivate var value: CGFloat = 0
-
-    //current value
-    public var pickerValue: CGFloat {
-        return self.value
+    //public value
+    public var value: CGFloat {
+        get {
+            return self.currentValue
+        }
+        set {
+            setPickerValue(value: newValue, animated: true)
+        }
     }
 
-    public var textColor: UIColor = UIColor.black {
+    //private value
+    fileprivate var currentValue: CGFloat = 0
+
+    //label
+    public var majorLabelFont: UIFont = UIFont.systemFont(ofSize: 12) {
         didSet {
             self.setNeedsLayout()
         }
     }
 
-    public var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
+    public var majorLabelColor: UIColor = UIColor.black {
         didSet {
             self.setNeedsLayout()
         }
     }
 
-    public var textFontSize: CGFloat = 12 {
+    public var majorLabelOffset: CGFloat = 24 {
         didSet {
             self.setNeedsLayout()
         }
     }
 
-    public var textOffset: CGFloat = 24 {
+    //middle line
+    public var middleLineLength: CGFloat = 20.0 {
         didSet {
             self.setNeedsLayout()
         }
     }
 
-    public var redLineWidth: CGFloat = 1.0 {
+    public var middleLineWidth: CGFloat = 1.0 {
         didSet {
             self.setNeedsLayout()
         }
     }
 
-    public var redLineLength: CGFloat = 20.0 {
-        didSet {
-            self.setNeedsLayout()
-        }
-    }
-
-    public var redLineColor: UIColor = UIColor.red {
+    public var middleLineColor: UIColor = UIColor.red {
         didSet {
             self.setNeedsLayout()
         }
@@ -95,7 +84,7 @@ class ScrollRulerNumberPicker: UIView {
         }
     }
 
-    //major
+    //major tick
     public var majorTickColor: UIColor = UIColor.black {
         didSet {
             self.setNeedsLayout()
@@ -114,7 +103,7 @@ class ScrollRulerNumberPicker: UIView {
         }
     }
 
-    //minjor
+    //minjor tick
     public var minorTickColor: UIColor = UIColor.lightGray {
         didSet {
             self.setNeedsLayout()
@@ -198,9 +187,9 @@ class ScrollRulerNumberPicker: UIView {
 
     private func setLayerLineStyle() {
         redLineLayer.fillColor = UIColor.clear.cgColor
-        redLineLayer.strokeColor = redLineColor.cgColor
+        redLineLayer.strokeColor = middleLineColor.cgColor
         redLineLayer.lineCap = kCALineCapSquare
-        redLineLayer.lineWidth = redLineWidth
+        redLineLayer.lineWidth = middleLineWidth
 
         topStraightLineLayer.fillColor = UIColor.clear.cgColor
         topStraightLineLayer.strokeColor = topStraightLineColor.cgColor
@@ -231,7 +220,7 @@ class ScrollRulerNumberPicker: UIView {
         return layer
     }
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         //reset layer style
@@ -256,8 +245,8 @@ class ScrollRulerNumberPicker: UIView {
         //draw center red line
         redLineLayer.frame = self.bounds
 
-        redLinePath.move(to: CGPoint(x: width / 2.0, y: redLineWidth / 2.0))
-        redLinePath.addLine(to: CGPoint(x: width / 2.0, y: redLineWidth / 2.0 + redLineLength))
+        redLinePath.move(to: CGPoint(x: width / 2.0, y: middleLineWidth / 2.0))
+        redLinePath.addLine(to: CGPoint(x: width / 2.0, y: middleLineWidth / 2.0 + middleLineLength))
 
         redLineLayer.path = redLinePath.cgPath
         self.layer.addSublayer(redLineLayer)
@@ -288,15 +277,14 @@ class ScrollRulerNumberPicker: UIView {
             if let text = self.delegate?.numberPickerLabelTextForValue(picker: self, value: start) {
                 let textLayer = CATextLayer()
                 textLayer.contentsScale = UIScreen.main.scale
-                textLayer.font = textFont
-                textLayer.fontSize = textFontSize
-                let textWidth = text.cy_width(font: textFont, height: 20)
-                textLayer.frame = CGRect(x: x - textWidth / 2.0, y: textOffset, width: textWidth, height: textFontSize)
+                textLayer.font = majorLabelFont
+                textLayer.fontSize = majorLabelFont.pointSize
+                let textWidth: CGFloat = text.size(withAttributes: [NSAttributedStringKey.font: majorLabelFont]).width
+                textLayer.frame = CGRect(x: x - textWidth / 2.0, y: majorLabelOffset, width: textWidth, height: majorLabelFont.pointSize)
                 textLayer.string = text
                 textLayer.alignmentMode = kCAAlignmentCenter
-                textLayer.foregroundColor = UIColor.black.cgColor
+                textLayer.foregroundColor = majorLabelColor.cgColor
                 majorLineLayer.addSublayer(textLayer)
-
                 self.textLayers.append(textLayer)
             }
 
@@ -326,14 +314,14 @@ class ScrollRulerNumberPicker: UIView {
         let offsetX = contentOffset.x
         let range = CGFloat(maxValue - minValue) / majorValueStep * minorTickDistance * CGFloat(self.minorTicksPerMajorTick.rawValue)
         if offsetX < 0 {
-            if self.value != self.minValue {
-                self.value = self.minValue
+            if self.currentValue != self.minValue {
+                self.currentValue = self.minValue
                 self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.minValue)
             }
             return
         } else if offsetX > range {
-            if self.value != self.maxValue {
-                self.value = self.maxValue
+            if self.currentValue != self.maxValue {
+                self.currentValue = self.maxValue
                 self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.maxValue)
             }
             return
@@ -349,11 +337,11 @@ class ScrollRulerNumberPicker: UIView {
             sourceValue = sourceValue - remainder + step
         }
 
-        self.value = sourceValue
-        self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.value)
+        self.currentValue = sourceValue
+        self.delegate?.numberPickerDidUpdateValue(picker: self, newValue: self.currentValue)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -361,10 +349,10 @@ class ScrollRulerNumberPicker: UIView {
         let range = CGFloat(maxValue - minValue) / majorValueStep * minorTickDistance * CGFloat(self.minorTicksPerMajorTick.rawValue)
         var offset = value * range / (maxValue - minValue)
         if offset < 0 {
-            self.value = self.minValue
+            self.currentValue = self.minValue
             offset = 0
         } else if offset > range {
-            self.value = self.maxValue
+            self.currentValue = self.maxValue
             offset = range
         }
 
@@ -374,21 +362,21 @@ class ScrollRulerNumberPicker: UIView {
 
 extension ScrollRulerNumberPicker: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.handleOffset(contentOffset: scrollView.contentOffset)
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //while stop Dragging without Decelerating
         if scrollView.isDragging == false {
             self.handleOffset(contentOffset: scrollView.contentOffset)
-            self.setPickerValue(value: self.value, animated: true)
+            self.setPickerValue(value: self.currentValue, animated: true)
         }
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.handleOffset(contentOffset: scrollView.contentOffset)
-        self.setPickerValue(value: self.value, animated: true)
+        self.setPickerValue(value: self.currentValue, animated: true)
     }
 
 }
